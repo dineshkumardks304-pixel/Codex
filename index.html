@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Try-On Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel controls">
+        <h1>Virtual Try-On Studio</h1>
+        <p class="sub">Upload your photo + model/cloth image and adjust the fit.</p>
+
+        <label class="file-input">
+          <span>Your photo</span>
+          <input id="userImageInput" type="file" accept="image/*" />
+        </label>
+
+        <label class="file-input">
+          <span>Cloth / model image</span>
+          <input id="clothImageInput" type="file" accept="image/*" />
+        </label>
+
+        <div class="slider-group">
+          <label for="scale">Size</label>
+          <input id="scale" type="range" min="20" max="220" value="100" />
+        </div>
+
+        <div class="slider-group">
+          <label for="opacity">Opacity</label>
+          <input id="opacity" type="range" min="10" max="100" value="90" />
+        </div>
+
+        <div class="slider-group">
+          <label for="rotation">Rotation</label>
+          <input id="rotation" type="range" min="-90" max="90" value="0" />
+        </div>
+
+        <div class="actions">
+          <button id="centerBtn" type="button">Center Cloth</button>
+          <button id="downloadBtn" type="button">Download Result</button>
+        </div>
+
+        <ul class="tips">
+          <li>Drag cloth image on canvas to position it.</li>
+          <li>Use transparent PNG for better results.</li>
+          <li>For best fit, use front-facing full-body photos.</li>
+        </ul>
+      </section>
+
+      <section class="panel preview">
+        <canvas id="tryOnCanvas" width="900" height="1100"></canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
